@@ -57,8 +57,14 @@ function App() {
   );
 }
 
+function Header() {}
+
+function Menu() {}
+
+function Footer() {}
+
 // component as function
-// 1) fucntion name must be start with capital letter
+// 1) function name must be start with capital letter
 // 2) return some markup
 // never nest component declaration in another function
 // declare components in top level
