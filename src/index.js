@@ -72,25 +72,11 @@ function Menu() {
     <main className="menu">
       <h2>Our Menu</h2>
 
-      <div>
+      <ul>
         {pizzaData.map((pizza) => (
           <Pizza pizzaObj={pizza} key={pizza.name} />
         ))}
-      </div>
-
-      {/* <Pizza
-        name="Pizza Spinaci"
-        ingredients="Tomato, mozarella, spinach, and ricotta cheese"
-        photoName="pizzas/spinaci.jpg"
-        price={10}
-      />
-
-      <Pizza
-        name="Pizza Funghi"
-        ingredients="Tomato, mushrooms"
-        price={12}
-        photoName="pizzas/funghi.jpg"
-      /> */}
+      </ul>
     </main>
   );
 }
@@ -102,14 +88,14 @@ function Menu() {
 // declare components in top level
 function Pizza(props) {
   return (
-    <div className="pizza">
+    <li className="pizza">
       <img src={props.pizzaObj.photoName} alt={props.name} />
       <div>
         <h3>{props.pizzaObj.name}</h3>
         <p>{props.pizzaObj.ingredients}</p>
         <span>{props.pizzaObj.price + 3}</span>
       </div>
-    </div>
+    </li>
   );
 }
 
