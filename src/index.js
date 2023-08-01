@@ -93,6 +93,8 @@ function Menu() {
 // never nest component declaration in another function
 // declare components in top level
 function Pizza(props) {
+  if (props.pizzaObj.soldOut) return null;
+
   return (
     <li className="pizza">
       <img src={props.pizzaObj.photoName} alt={props.name} />
@@ -107,13 +109,14 @@ function Pizza(props) {
 
 function Footer() {
   const hour = new Date().getHours();
-  const openHour = 20;
+  const openHour = 8;
   const closeHour = 22;
   const isOpen = hour >= openHour && hour <= closeHour;
   console.log(isOpen);
 
   // if (hour >= openHour && hour <= closeHour) alert("We are currently open");
   // else alert("Sorry we are closed");
+  if (!isOpen) return <p>CLOSED</p>;
 
   return (
     <footer className="footer">
